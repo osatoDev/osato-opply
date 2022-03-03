@@ -17,7 +17,7 @@ import ListItemText from "@mui/material/ListItemText";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 import WarehouseIcon from "@mui/icons-material/Warehouse";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, FormControlLabel, FormGroup, Switch } from "@material-ui/core";
+import { Button, FormGroup, } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -71,7 +71,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function PersistentDrawer(props: any) {
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   let navigate = useNavigate();
 

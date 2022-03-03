@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, CardActions, Grid } from "@mui/material";
-import { v4 as uuid } from "uuid";
+import {  Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import { getAuthTokenString } from "../../Helper";
 import Layout from "../../Layout";
@@ -62,7 +61,7 @@ function Quotes() {
         justifyContent="center"
       >
         <Grid item style={{ height: 550, width: "50%" }}>
-          {quotes && quotes.length == 0 ? (
+          {quotes && quotes.length === 0 ? (
             <Typography> No quotes yet. Come back later. </Typography>
           ) : (
             <Typography>Quotes</Typography> && (

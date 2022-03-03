@@ -55,7 +55,7 @@ function SignInForm({ hasJustSignedUp, hasJustLoggedOut }: SignInProps) {
 
     const url = `${process.env.REACT_APP_TARGET_BACKEND}/api-token-auth/`;
 
-    const response = await fetch(url, {
+    await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

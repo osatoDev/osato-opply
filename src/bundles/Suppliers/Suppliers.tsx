@@ -59,7 +59,7 @@ function Suppliers() {
         justifyContent="center"
       >
         <Grid item style={{ height: 550, width: "50%" }}>
-          {suppliers && suppliers.length == 0 ? (
+          {suppliers && suppliers.length === 0 ? (
             <Typography> No suppliers yet. Come back later. </Typography>
           ) : (
             <Typography>Suppliers</Typography> && (

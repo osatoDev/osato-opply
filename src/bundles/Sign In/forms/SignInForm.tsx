@@ -1,22 +1,17 @@
 import {
   Button,
   capitalize,
-  Card,
   CircularProgress,
   Grid,
   IconButton,
-  Paper,
   TextField,
   Typography,
 } from "@mui/material";
-import { Formik, FormikValues, yupToFormErrors } from "formik";
+import { Formik, FormikValues } from "formik";
 import { ReactNode, useEffect, useState } from "react";
-import clsx from "clsx";
 import * as yup from "yup";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
-import { userState as userRecoilAtom } from "../../../Users/atom";
-import LoginIcon from "@mui/icons-material/Login";
 import { useStyles } from "../../../Theme";
 
 type FormValues = {
@@ -103,14 +98,14 @@ function SignInForm({ hasJustSignedUp, hasJustLoggedOut }: SignInProps) {
           <form onSubmit={handleSubmit}>
             <Grid container direction="column" spacing={2}>
               <Grid item>
-                {hasJustSignedUp == true ? (
+                {hasJustSignedUp === true ? (
                   <Typography variant="h5">
                     Your account has been successfully created. Login to start
                     enjoying our services!
                   </Typography>
                 ) : null}
 
-                {hasJustLoggedOut == true ? (
+                {hasJustLoggedOut === true ? (
                   <Typography variant="h5">
                     You have successfully logged out. Log back in at your
                     convenience!

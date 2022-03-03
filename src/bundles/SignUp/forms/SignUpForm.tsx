@@ -7,7 +7,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Formik, FormikValues, yupToFormErrors } from "formik";
+import { Formik, FormikValues } from "formik";
 import { ReactNode, useEffect, useState } from "react";
 import * as yup from "yup";
 import { Visibility, VisibilityOff } from "@material-ui/icons";
@@ -45,7 +45,6 @@ function SignUpForm() {
   const styles = useStyles();
   const [passwordMask, setPasswordMask] = useState(false);
   const [errorState, setErrorState] = useState({ errors: { message: "" } });
-  const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -56,7 +55,6 @@ function SignUpForm() {
   }, []);
 
   const onSubmit = async (values: FormikValues) => {
-    setLoading(true);
     const requestBody = JSON.stringify({
       first_name: values.firstName,
       last_name: values.lastName,
@@ -79,7 +77,6 @@ function SignUpForm() {
           setErrorState({
             errors: { message: "Account creation failed" },
           });
-          setLoading(false);
           return;
         }
         navigate("/signinFromSignUp");

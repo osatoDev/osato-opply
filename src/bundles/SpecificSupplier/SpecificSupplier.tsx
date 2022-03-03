@@ -1,7 +1,7 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAuthTokenString } from "../../Helper";
-import { Card, CardContent, CardActions, CardMedia, Grid } from "@mui/material";
+import { Card, CardContent, CardMedia, Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import Layout from "../../Layout";
 
@@ -29,7 +29,7 @@ const SpecificSupplier = () => {
     return () => {
       document.title = "Opply Coding Test";
     };
-  }, []);
+  }, [id]);
 
   const fetchRandomPhoto = (description: string) => {
     const requestOptions = {
@@ -54,7 +54,7 @@ const SpecificSupplier = () => {
         alignContent="center"
         justifyContent="center"
       >
-        {supplier && supplier.length == 0 ? (
+        {supplier && supplier.length === 0 ? (
           <Typography>Supplier not found </Typography>
         ) : (
           <Card sx={{ minWidth: 275 }}>

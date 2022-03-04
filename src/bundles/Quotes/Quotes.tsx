@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {  Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Typography } from "@mui/material";
 import { getAuthTokenString } from "../../Helper";
 import Layout from "../../Layout";
 import { DataGrid } from "@mui/x-data-grid";
-import moment from 'moment';
+import moment from "moment";
 
 function Quotes() {
   const [quotes, setQuotes] = useState<any>([]);
@@ -64,7 +64,8 @@ function Quotes() {
           {quotes && quotes.length === 0 ? (
             <Typography> No quotes yet. Come back later. </Typography>
           ) : (
-            <Typography>Quotes</Typography> && (
+            <>
+              <Typography variant="h5">Quotes</Typography>
               <DataGrid
                 columns={columns}
                 rows={rows}
@@ -72,10 +73,10 @@ function Quotes() {
                 onPageSizeChange={(newPageSize: React.SetStateAction<number>) =>
                   setPageSize(newPageSize)
                 }
-                rowsPerPageOptions={[5,10, 20]}
+                rowsPerPageOptions={[5, 10, 20]}
                 pagination
               />
-            )
+            </>
           )}
         </Grid>
       </Grid>

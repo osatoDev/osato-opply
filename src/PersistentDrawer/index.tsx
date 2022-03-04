@@ -15,9 +15,10 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
+import ListItemButton from "@mui/material/ListItemButton";
 import WarehouseIcon from "@mui/icons-material/Warehouse";
-import { Link, useNavigate } from "react-router-dom";
-import { Button, FormGroup, } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
+import { Button, FormGroup } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -94,7 +95,6 @@ export default function PersistentDrawer(props: any) {
       <AppBar position="fixed" open={open}>
         <Toolbar>
           <IconButton
-          
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -131,22 +131,22 @@ export default function PersistentDrawer(props: any) {
         </DrawerHeader>
         <Divider />
         <List>
-          <Link to="/Quotes">
-            <ListItem button>
+          <ListItem>
+            <ListItemButton component="a" href="/Quotes">
               <ListItemIcon>
                 <RequestQuoteIcon />
               </ListItemIcon>
               <ListItemText primary="Quotes" />
-            </ListItem>
-          </Link>
-          <Link to="/Suppliers">
-            <ListItem button>
+            </ListItemButton>
+          </ListItem>
+          <ListItem>
+            <ListItemButton component="a" href="/Suppliers">
               <ListItemIcon>
                 <WarehouseIcon />
               </ListItemIcon>
               <ListItemText primary="Suppliers" />
-            </ListItem>
-          </Link>
+            </ListItemButton>
+          </ListItem>
         </List>
         <Divider />
       </Drawer>

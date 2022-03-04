@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import { getAuthTokenString } from "../../Helper";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../Layout";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid} from "@mui/x-data-grid";
 
 function Suppliers() {
   const [suppliers, setSuppliers] = useState<any>([]);
@@ -13,8 +13,8 @@ function Suppliers() {
   let navigate = useNavigate();
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
-    { field: "name", headerName: "Name", width: 200 },
-    { field: "description", headerName: "Description", width: 250 },
+    { field: "name", headerName: "Name", width: 250 },
+    { field: "description", headerName: "Description", width: 250 },    
   ];
   useEffect(() => {
     document.title = "Opply Coding Test - Suppliers";
@@ -49,7 +49,6 @@ function Suppliers() {
     };
   }, []);
 
-
   return (
     <Layout>
       <Grid
@@ -62,9 +61,10 @@ function Suppliers() {
           {suppliers && suppliers.length === 0 ? (
             <Typography> No suppliers yet. Come back later. </Typography>
           ) : (
-            <Typography>Suppliers</Typography> && (
+            <>
+              <Typography variant="h5">Suppliers</Typography>
               <DataGrid
-                onCellClick={(params,e) => navigate(`/supplier/${params.id}`)}
+                onCellClick={(params, e) => navigate(`/supplier/${params.id}`)}
                 columns={columns}
                 rows={rows}
                 pageSize={pageSize}
@@ -74,7 +74,7 @@ function Suppliers() {
                 rowsPerPageOptions={[5, 10, 20]}
                 pagination
               />
-            )
+            </>
           )}
         </Grid>
       </Grid>
